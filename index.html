@@ -4,10 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake game</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <body class="bg-black">
+    <div
+      id="menu"
+      class="w-xl p-8 bg-purple-600 absolute z-20 top-1/2 left-1/2 -translate-1/2 rounded-2xl space-y-10 transition-all duration-500"
+    >
+      <h2 class="text-white text-3xl font-semibold text-center">
+        Welcome to the
+        <br />
+        <span class="text-5xl">Snake Game!</span>
+      </h2>
+      <div class="flex flex-col gap-5 items-center">
+        <button
+          id="start-btn"
+          class="w-56 h-14 bg-green-600 text-white font-semibold rounded-xl cursor-pointer"
+        >
+          Start Game
+        </button>
+        <button
+          class="w-56 h-14 bg-white font-semibold rounded-xl cursor-pointer"
+        >
+          High Scores
+        </button>
+      </div>
+    </div>
+    <div
+      id="gameContainer"
+      class="absolute top-1/2 left-1/2 -translate-1/2 space-y-5 opacity-0 scale-50 pointer-events-none transition-all duration-500"
+    >
+      <div class="flex justify-between">
+        <div class="text-white text-lg font-bold uppercase">
+          Score: <span id="score">0</span>
+        </div>
+        <div class="text-white text-lg font-bold uppercase">
+          High Score: <span id="high-score"></span>
+        </div>
+      </div>
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
     <script src="game.js"></script>
   </body>
 </html>
